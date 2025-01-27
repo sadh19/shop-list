@@ -60,7 +60,7 @@ function App() {
                 className="rounded p-2 mx-4 text-sm text-gray-800 bg-blue-100 hover:cursor-pointer hover:text-white"
                 onClick={() => handleAddItem(newItem)}
               >
-                Add
+                Add item
               </button>
             </div>
           ) : (
