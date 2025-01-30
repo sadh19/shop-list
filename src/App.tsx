@@ -75,7 +75,7 @@ function App() {
       </div>
 
       <section className="w-full">
-        <h2>Total: $</h2>
+        <h2>Total: $ </h2>
       </section>
     </>
   );
