@@ -6,7 +6,7 @@ name: Manual workflow
 # or API.
 on:
   push:
-    branches:  ["main"]
+    branches: ["main"]
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "greet"
@@ -16,6 +16,18 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Runs a single command using the runners shell
-    - name: "Hola, mundo"
-      run: echo "Hello,World"
+      # Runs a single command using the runners shell
+      - name: "Hola, mundo"
+        run: echo "Hello,World"
+
+  messageSlack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notification Slack
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_CHANNEL: commits-dev
+          SLACK_TITLE: Github notification
+          SLACK_USERNAME: BotGithub
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_MESSAGE: "This is my first message"
